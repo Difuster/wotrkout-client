@@ -1,19 +1,23 @@
-import { useState } from 'react';
+import { RiCloseFill, RiMenu3Line } from 'react-icons/ri';
+import { useOnClickOutside } from '../../../hooks/useOnClickOutside';
 import styles from './Hamburger.module.scss';
-import {RiMenu3Line, RiCloseFill} from 'react-icons/ri';
 import Menu from './Menu';
 
 const Hamburger = () => {
-  const [isShown, setIsShown] = useState(false);
+	const { isShown, setIsShown, ref } = useOnClickOutside(false);
 
-  return (
-    <div className={styles.wrapper}>
-      <button onClick={() => setIsShown(!isShown)}>
-        {isShown ? <RiCloseFill className={styles.icon} /> : <RiMenu3Line className={styles.icon} />}
-      </button>
-      <Menu isShown={isShown} />
-    </div>
-  )
-}
+	return (
+		<div className={styles.wrapper} ref={ref}>
+			<button onClick={() => setIsShown(!isShown)}>
+				{isShown ? (
+					<RiCloseFill className="header-icon" />
+				) : (
+					<RiMenu3Line className="header-icon" />
+				)}
+			</button>
+			<Menu isShown={isShown} />
+		</div>
+	);
+};
 
 export default Hamburger;

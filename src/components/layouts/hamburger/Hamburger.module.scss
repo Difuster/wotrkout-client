@@ -11,17 +11,13 @@
 		cursor: pointer;
 	}
 
-  .icon {
-    color: $white;
-  }
-
 	.menu {
 		position: absolute;
 		top: calc(100% + 8px);
 		right: 0;
 		background-color: #fff;
 		padding: 10px 12px;
-		font-size: 14px;
+		font-size: 16px;
 		box-shadow: $bx-16;
 		border-radius: 10px 0 10px 10px;
 		min-width: 116px;
@@ -46,6 +42,13 @@
 					margin: 4px 0;
 				}
 			}
+		}
+
+		li>button {
+			font-size: 16px;
+		}
+		li>button:hover {
+			color: $accent;
 		}
 	}
 }

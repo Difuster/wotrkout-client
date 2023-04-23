@@ -1,1 +1,1 @@
-#App for creating your own workout plan
+# App for creating your own workout plan
